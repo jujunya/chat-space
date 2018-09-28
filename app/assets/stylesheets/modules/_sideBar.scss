@@ -1,0 +1,50 @@
+.side-bar{
+  width: 300px;
+  background-color: $mainBackgroundColor;
+      
+  .header{
+    background-color: $mainBackgroundColor;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 20px;
+
+    h3.header__name{
+      display: inline-block;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+    }
+
+    ul.header__lists{
+      float: right;
+      display: inline-block;
+
+      li.list{
+        display: inline-block;
+
+        i{
+          color: white;
+        }
+      }
+    }
+  }
+  .groups{
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    padding: 0 20px;
+
+    .group{
+      padding: 20px 0 40px;
+
+      .group__name{
+        font-size: 15px;
+        color: white;
+      }
+      .group__message{
+        font-size: 11px;
+        margin-top: 5px;
+        color: white;
+      }
+    }
+  }
+}

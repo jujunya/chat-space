@@ -1,0 +1,50 @@
+.notification
+  .wrapper
+    .side-bar
+      .header
+        %h3.header__name
+          junya
+        %ul.header__lists
+          %li.list
+            = link_to "/" do
+              %i.fa.fa-pencil-square-o
+          %li.list
+            = link_to "/" do
+              %i.fa.fa-cog.icon
+      .groups
+        .group
+          = link_to "/" do
+            .group__name
+              サンプル
+            .group__message
+              よろしくお願いします
+    .chat
+      .header
+        .left-header
+          .left-header__title
+            test
+          %ul.left-header__members
+            Member&nbsp;:&nbsp;
+            %li.member
+              junya
+        .right-header
+          = link_to "/" , :class => "right-header__button" do
+            Edit
+      .messages.js-messages
+        .message
+          .upper-message
+            .upper-message__user-name junya
+            .upper-message_date 2018/09/20 06:01
+            
+          .lower-message
+            .lower-message__count よろしくお願いします。
+            
+      .form
+        %form{:class => "js-form", :id => "new_message", :method => "post"}
+          %input{:class => "form__message js-content", :id => "message_content" , :name => "message[content]", :value =>"type a message"}
+          .for__mask
+            %label.form__mask__image
+              %i.fa.fa-picture-o.icon
+              %input{:class => "hidden js-file", :type => "file", :id => "message-image", :name => "message[image]"}
+              
+          %input{:class => "form__submit" , :name => "commit", :type => "submit" , :value => "Send" }

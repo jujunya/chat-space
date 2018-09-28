@@ -1,0 +1,34 @@
+.messages.js-messages {
+  background-color: #FAFAFA;
+  box-sizing: border-box;
+  height: calc(100vh - 100px - 90px);
+  overflow: scroll;
+  padding: 46px 40px 0;
+
+  .message{
+    margin-bottom: 40px;
+
+    .upper-message{
+      display: flex;
+
+      .upper-message__user-name{
+        color: #434a54;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .upper-message_date{
+        color: #999;
+        font-size: 12px;
+        padding-left: 10px;
+      }
+    }
+    .lower-message{
+      margin-top: 10px;
+
+      .lower-message__count{
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
