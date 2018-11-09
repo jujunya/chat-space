@@ -4,7 +4,7 @@
     .header
       .left-header
         .left-header__title
-          @group.name
+          = @group.name
         %ul.left-header__members
           Member&nbsp;:&nbsp;
           %li.member
@@ -15,21 +15,12 @@
         = link_to edit_user_path(@group) , :class => "right-header__button" do
           Edit
     .messages.js-messages
-      render @messages
+      = render @messages
     .form
       = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        = f.text_field :content, class: 'form__message js-content', placeholder: 'type a message'
         .for__mask
-          %label.form__mask__image
-            %i.fa.fa-picture-o.icon
-            %input{:class => "hidden js-file", :type => "file", :id => "message-image", :name => "message[image]"}
-        %input{:class => "form__submit" , :name => "commit", :type => "submit" , :value => "Send" }
-
--#    .form
--#      = form_for [@group, @message] do |f|
--#        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
--#        .form__mask
--#          = f.label :image, class: 'form__mask__image' do
--#            = fa_icon 'picture-o', class: 'icon'
--#            = f.file_field :image, class: 'hidden'
--#        = f.submit 'Send', class: 'form__submit'
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden js-file'
+        = f.submit 'Send', class: 'form__submit'

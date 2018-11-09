@@ -7,7 +7,7 @@
   bottom: 0;
   width: calc(100% - 300px);
 
-  input.form__message.js-content{
+  .form__message.js-content{
     border: none;
     box-sizing: border-box;
     float: left;
@@ -32,7 +32,7 @@
     }
   }
 
-  input.form__submit{
+  .form__submit{
     background-color: #38AEF0;
     border: none;
     color: #fff;

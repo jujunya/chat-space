@@ -1,6 +1,12 @@
 .message
   .upper-message
-    .upper-message__user-name junya
-    .upper-message_date 2018/09/20 06:01
+    .upper-message__user-name
+      = message.user.name
+    .upper-message_date
+      = message.created_at
   .lower-message
-    .lower-message__count よろしくお願いします。
+    .lower-message__count
+      - if message.content.present?
+        %p.lower-message__content
+          = message.content
+      = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
