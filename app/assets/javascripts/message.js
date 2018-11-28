@@ -56,18 +56,17 @@ $(function(){
       var lastMessageId = $('.message__box').last().attr('data-message-id');
         $.ajax({
           url: window.location.href.json,
-          data: {id: lastMessageId },
+          data: {id: lastMessageId},
           dataType: 'json'
         })
         .done(function(data) {
+          console.log('test');
           var insertHTML = '';
-          data.forEach(function(message) {
-            if ((message.id > lastMessageId) || (lastMessageId == undefined) ){
-              insertHTML += appendMessage(message);
-              $('.messages').append(insertHTML);
-              $('.messages.js-messages').animate({scrollTop: $('.messages.js-messages')[0].scrollHeight},'fast');
-            }
-          });
+            data.forEach(function(message) {
+                insertHTML += appendMessage(message);
+                $('.messages').append(insertHTML);
+                $('.messages.js-messages').animate({scrollTop: $('.messages.js-messages')[0].scrollHeight},'fast');
+            });
         })
         .fail(function(data) {
           alert('自動更新に失敗しました');
