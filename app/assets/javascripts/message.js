@@ -2,27 +2,27 @@ $(document).on('turbolinks:load', function() {
 $(function(){
   function appendMessage(message){
     var image =  (message.image) ? `<img class="lower-message__image" src="${message.image}">` : '';
-    var html =`
-    <div class = "message">
-      <div class = "message__box" data-message-id =" ${message.id}">
-        <div class = "upper-message">
-          <div class ="upper-message__user-name">
-            ${message.name}
-          </div>
-          <div class = "upper-message_date">
-            ${message.created_at}
-          </div>
-        </div>
-        <div class = "lower-message">
-          <div class = "lower-message__count">
-              <p class ="lower-message__content">
-                ${message.content}
-                ${image}
-              </p>
-          </div>
-        </div>
-      </div>
-    </div>`
+    var html =
+    '<div class = "message">'+
+      '<div class = "message__box" data-message-id ="'+ message.id + '>'+
+        '<div class = "upper-message">'+
+          '<div class ="upper-message__user-name">'+
+             message.name +
+          '</div>'+
+          '<div class = "upper-message_date">'+
+             message.created_at +
+          '</div>'+
+        '</div>'+
+        '<div class = "lower-message">'+
+          '<div class = "lower-message__count">'+
+              '<p class ="lower-message__content">'+
+                message.content +
+                image +
+              '</p>'+
+          '</div>'+
+        '</div>'+
+      '</div>'+
+    '</div>';
       return html;
   }
   $('#new_message').on('submit', function(e){
