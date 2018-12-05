@@ -55,12 +55,11 @@ $(function(){
       if (window.location.href.match(/\/groups\/\d+\/messages/)) {
       var lastMessageId = $('.message__box').last().attr('data-message-id');
         $.ajax({
-          url: window.location.href.json,
+          url: window.location.href,
           data: {id: lastMessageId},
           dataType: 'json'
         })
         .done(function(data) {
-          console.log('test');
           var insertHTML = '';
             data.forEach(function(message) {
                 insertHTML += appendMessage(message);
