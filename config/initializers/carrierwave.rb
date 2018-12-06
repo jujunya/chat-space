@@ -1,5 +1,5 @@
-require 'carrierwave/storage/abstract'
-require 'carrierwave/storage/file'
+#require 'carrierwave/storage/abstract'
+#require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
@@ -10,6 +10,7 @@ CarrierWave.configure do |config|
     aws_access_key_id: Rails.application.secrets.aws_access_key_id,
     aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
     region: 'ap-northeast-1'
+    bucket: 'baketsjun2'
   }
 
   config.fog_directory  = 'baketsjun2'
