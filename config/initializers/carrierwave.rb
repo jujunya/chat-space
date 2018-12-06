@@ -9,9 +9,10 @@ CarrierWave.configure do |config|
     provider: 'AWS',
     aws_access_key_id: Rails.application.secrets.aws_access_key_id,
     aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
-    region: 'ap-northeast-1'
+    region: 'ap-northeast-1',
+    bucket: 'baketsjun2'
   }
 
-  config.fog_directory  = 'baketsjun2'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/baketsjun2'
+  config.fog_directory  = 'testbuckets-j'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/testbuckets-j'
 end
